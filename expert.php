@@ -150,3 +150,22 @@ echo isLinkValid('https://google.com');
 echo isLinkValid('http://google.com');
 //VALID link
 echo isLinkValid('http://google.com/test.txt');
+
+new_exercise(10);
+
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+// SOLUTION: made count a variable, only have < parameter in for loop
+
+$fruitCount = count($areTheseFruits);
+
+for($i=0; $i < $fruitCount; $i++) {
+    if(!in_array($areTheseFruits[$i], $validFruits)) {
+        unset($areTheseFruits[$i]);
+    }
+}
+//var_dump(count($areTheseFruits));
+var_dump($areTheseFruits);//do not change this
