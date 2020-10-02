@@ -72,6 +72,7 @@ new_exercise(6);
 // The fixed code should echo the following at the bottom:
 // Here is the name: $name - $name2
 // $name variables are decided as seen in the code, fix all the bugs whilst keeping the functionality!
+// SOLUTION: implode takes glue param first
 $arr = [];
 
 function randomHeroName()
@@ -80,7 +81,8 @@ function randomHeroName()
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
     $randname = $heroes[rand(0,count($heroes))][rand(0, 10)];
-
+//    $randname = array_rand($heroes, 2);
+//    echo implode($randname);
     echo $randname;
 }
 
@@ -94,7 +96,6 @@ function combineNames($str1 = "", $str2 = "") {
     echo implode(" - ", $params);
 }
 
-
 function randomGenerate($arr, $amount) {
     for ($i = $amount; $i > 0; $i--) {
         array_push($arr, randomHeroName());
@@ -102,7 +103,5 @@ function randomGenerate($arr, $amount) {
 
     return $amount;
 }
-
-
 
 echo "Here is the name: " . combineNames();
