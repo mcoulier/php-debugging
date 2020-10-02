@@ -158,7 +158,7 @@ new_exercise(10);
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-// SOLUTION: made count a variable, only have < parameter in for loop
+// SOLUTION: made count a variable, only have < parameter in for loop (otherwise it will count 1 extra)
 
 $fruitCount = count($areTheseFruits);
 
@@ -167,5 +167,6 @@ for($i=0; $i < $fruitCount; $i++) {
         unset($areTheseFruits[$i]);
     }
 }
+
 //var_dump(count($areTheseFruits));
 var_dump($areTheseFruits);//do not change this
