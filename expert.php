@@ -131,21 +131,22 @@ echo login('wrong@example.be', 'wrong');
 //you can change things again!
 
 new_exercise(9);
+// SOLUTION: To know if substring is present use !== false, to know if absent use === false (very obvious right?)
 function isLinkValid(string $link) {
     $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
 
     foreach ($unacceptables as $unacceptable) {
-        if (strpos($link, $unacceptable) == true) {
+        if (strpos($link, $unacceptable) !== false) {
             return 'Unacceptable Found<br />';
         }
     }
     return 'Acceptable<br />';
 }
 //invalid link
-isLinkValid('http://www.google.com/hack.pdf');
+echo isLinkValid('http://www.google.com/hack.pdf');
 //invalid link
-isLinkValid('https://google.com');
+echo isLinkValid('https://google.com');
 //VALID link
-isLinkValid('http://google.com');
+echo isLinkValid('http://google.com');
 //VALID link
-isLinkValid('http://google.com/test.txt');
+echo isLinkValid('http://google.com/test.txt');
