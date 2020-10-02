@@ -113,11 +113,12 @@ function copyright(int $year) {
 echo copyright((int)date('Y'));
 
 new_exercise(8);
+// SOLUTION: AND operator in if statement to make both match, String in 1 return.
 function login(string $email, string $password) {
     if($email == 'john@example.be' && $password == 'pocahontas') {
         return 'Welcome John Smith';
     }
-    return 'No access';
+    return ' No access ';
 }
 
 //do not change anything below
@@ -128,3 +129,23 @@ echo login('john@example.be', 'dfgidfgdfg');
 //no access
 echo login('wrong@example.be', 'wrong');
 //you can change things again!
+
+new_exercise(9);
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
