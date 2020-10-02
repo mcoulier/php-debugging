@@ -104,3 +104,11 @@ function randomHeroName()
     return $randname;
 }
 echo "Here is the name: " . combineNames();
+
+new_exercise(7);
+// SOLUTION: echo to print, (int) to convert date string to integer
+function copyright(int $year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright((int)date('Y'));
