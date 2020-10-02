@@ -14,8 +14,7 @@ declare(strict_types=1);
 // SOLUTION: need to define variable otherwise it won't recognize it
 
 echo "Exercise 1 starts here:";
-function new_exercise() {
-    $x = null;
+function new_exercise($x) {
     $block = "<br/><hr/><br/><br/>Exercise $x starts here:<br/>";
     echo $block;
 
@@ -112,3 +111,21 @@ function copyright(int $year) {
 }
 //print the copyright
 echo copyright((int)date('Y'));
+
+new_exercise(8);
+function login(string $email, string $password) {
+    if($email == 'john@example.be' || $password == 'pocahontas') {
+        return 'Welcome John';
+        return ' Smith';
+    }
+    return 'No access';
+}
+
+//do not change anything below
+//should great the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//no access
+echo login('john@example.be', 'dfgidfgdfg');
+//no access
+echo login('wrong@example.be', 'wrong');
+//you can change things again!
